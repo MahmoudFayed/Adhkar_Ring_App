@@ -74,11 +74,11 @@
 ---  
 
 ## التثبيت عبر (RingPM)  
-    ### استخدم الامر التالي:
-        ringpm install Adhkar_Ring_App from mohannad-aldulaimi
+### استخدم الامر التالي:
+    ringpm install Adhkar_Ring_App from mohannad-aldulaimi
 
-    ### ثم بعد التحميل استخدم الاممر التالي:
-        ringpm run Adhkar_Ring_App
+### ثم بعد التحميل استخدم الاممر التالي:
+    ringpm run Adhkar_Ring_App
 
 - **مهند العيّاش** - 
 
