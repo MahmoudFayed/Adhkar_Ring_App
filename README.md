@@ -77,7 +77,7 @@
 ### استخدم الامر التالي:
     ringpm install Adhkar_Ring_App from mohannad-aldulaimi
 
-### ثم بعد التحميل استخدم الاممر التالي:
+### ثم بعد التحميل استخدم الامر التالي:
     ringpm run Adhkar_Ring_App
 
 - **مهند العيّاش** - 
