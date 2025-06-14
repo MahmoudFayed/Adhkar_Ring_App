@@ -1,6 +1,0 @@
-
-
-class splashscreen from qSplashscreen
-
-
-

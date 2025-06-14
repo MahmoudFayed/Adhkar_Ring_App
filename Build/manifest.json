@@ -1,0 +1,45 @@
+{
+  "name": "تطبيــق الأذكـــار",
+  "short_name": "تطبيــق الأذكـــار",
+  "start_url": "/Adhkar_Ring_App/Build/index.html",  
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffffff",
+  "lang": "ar", 
+  "dir": "rtl",  
+  "scope": "/Adhkar_Ring_App/Build/",  
+  "icons": [
+    {
+      "src": "/Adhkar_Ring_App/Build/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Adhkar_Ring_App/Build/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Adhkar_Ring_App/Build/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/Adhkar_Ring_App/Build/screenshots/mobile.jpg",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/Adhkar_Ring_App/Build/screenshots/desktop.jpg",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
