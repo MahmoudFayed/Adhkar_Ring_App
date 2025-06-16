@@ -4,7 +4,7 @@
   "start_url": "/Adhkar_Ring_App/Build/index.html",  
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#ffffff",
+  "theme_color": "#000000",
   "lang": "ar", 
   "dir": "rtl",  
   "scope": "/Adhkar_Ring_App/Build/",  

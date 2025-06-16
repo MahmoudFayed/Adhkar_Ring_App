@@ -1,4 +1,4 @@
-cVersion = '1.0.2'
+cVersion = '1.2.1'
 cVersion_notes_btnText='الإصـــدار: '
 cVersion_notes_btnText += cVersion
 cVersion_notes_btnText += nl
