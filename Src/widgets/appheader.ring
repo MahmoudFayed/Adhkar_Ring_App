@@ -85,10 +85,20 @@ class AppHeader from qWidget
 				setText(cAdhkarMasaaText)
 				setClickEvent(method('pNavigateTo('+nAdhkarMasaaScreen+')'))
 			}
+
+
+			GoToAdhkarSleepAction=new QAction(pWidget){
+				setText('     '+cAdhkarSleepText)
+				setClickEvent(method('pNavigateTo('+nAdhkarSleepScreen+')'))
+			}
+
+	
 			addAction(GoToHomeAction)
 			addSeparator()
 			addAction(GoToAdhkarSabahAction)
 			addAction(GoToAdhkarMasaaAction)
+			addSeparator()
+			addAction(GoToAdhkarSleepAction)
 		}
 
 		AppNavigationButton  {

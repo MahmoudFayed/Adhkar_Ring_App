@@ -7,9 +7,12 @@ class Adkhar_Panel from qScrollarea
 		setLayout(oLayout)
 		setStylesheet(cScrollWidgetStyle)
 		if iswebassembly() # 'cpp function to handel scroll using phones'
-			MakeWidgetScrollAble_Bytouch(pObject)
+			//MakeWidgetScrollAble_Bytouch(pObject)
 		ok
 		CreateAdhkarWidgets(pWidget,aAdhkarList)
+		# 'Setting Alignment for qscrollArea'
+			setAlignment(qt_AlignHCenter | qt_AlignVCenter)
+
 		return self
 
 	func CreateAdhkarWidgets pWidget,aAdhkarList

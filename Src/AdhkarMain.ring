@@ -1,11 +1,13 @@
 cAppTitle = 'تطبيــق الأذكــار'
 cAdhkarSabahText = 'أذكـــار الصــبــــاح'
 cAdhkarMasaaText = 'أذكـــار الـــمــســـاء'
+cAdhkarSleepText = 'أذكـــار الـنــوم'
 
 nSplashScreen = 0
 nMainScreen = 0
 nAdhkarSabahScreem = 1
 nAdhkarMasaaScreen = 2
+nAdhkarSleepScreen = 3
 
 load "adhkarView.ring"
 
@@ -17,7 +19,7 @@ if IsMainSourceFile() {
 		openWindow(:adhkarController)
 		
 		if iswebassembly()
-				hidekeyboard(pObject) # 'ring function defiened in cpp to hide keyboard in mobile'
+			hidekeyboard(pObject) # 'ring function defiened in cpp to hide keyboard in mobile'
 		else
 			exec()
 		ok
@@ -40,13 +42,18 @@ class adhkarController from windowsControllerParent
 
 	func pGo_Sabah_adhkar
 		oView.oMainStackWidget.setCurrentindex(nAdhkarSabahScreem)
-
 	func pGo_Masaa_adhkar
 		oView.oMainStackWidget.setCurrentindex(nAdhkarMasaaScreen)
+	func pGo_Sleep_adhkar
+		oView.oMainStackWidget.setCurrentindex(nAdhkarSleepScreen)
+
 	func pNavigateTo nScreenId
 		oView.oMainStackWidget.setCurrentindex(nScreenId)
 
 
+	func pShowVersion_note
+		new version_notes_widget(oView.win)
+		
 
 	func pScreenChanged
 		if this.l_isInitState = 1 
@@ -66,6 +73,8 @@ class adhkarController from windowsControllerParent
 				cText = substr(cAdhkarSabahText,'ـ','')
 			on nAdhkarMasaaScreen
 				cText = substr(cAdhkarMasaaText,'ـ','')
+			on nAdhkarSleepScreen
+				cText = substr(cAdhkarSleepText,'ـ','')
 		other
 			cText = substr(cAppTitle,'ـ','')
 		off
