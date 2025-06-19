@@ -1,4 +1,4 @@
-const CACHE_NAME = 'Adhkar-PWA-v1.2.1';
+const CACHE_NAME = 'Adhkar-PWA-v1.2.2';
 const ASSETS_TO_CACHE = [
   '/Adhkar_Ring_App/Build/index.html',
   '/Adhkar_Ring_App/Build/logo.png',
