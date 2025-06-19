@@ -4,6 +4,7 @@ class MainButtonsList from qScrollArea
 	btnMainAzkarSabah
 	btnMainAzkarMasaa
 	btnMainAzkarSleep
+	btnMainAzkarAfterSleep
 	subStyle = 'QScrollArea{ margin-bottom:20px ;}'
 
 	func init pWidget
@@ -37,6 +38,11 @@ class MainButtonsList from qScrollArea
 			setClickevent(method(:pGo_Sleep_adhkar))
 		}
 
+		btnMainAzkarAfterSleep = new MainButton(pWidget) {
+			setBigText('أذكار الإستيقاظ من النوم')
+			setFont(oMainAppFont)
+			setClickevent(method(:pGo_after_Sleep_adhkar))
+		}
 
 		oLayout{
 			addWidget(this.btnMainAzkarSabah)
@@ -44,6 +50,8 @@ class MainButtonsList from qScrollArea
 			addWidget(this.btnMainAzkarMasaa)
 				addSpacing(8)
 			addWidget(this.btnMainAzkarSleep)
+				addSpacing(8)
+			addWidget(this.btnMainAzkarAfterSleep)
 
 		}
 		# 'Setting Alignment for qscrollArea'

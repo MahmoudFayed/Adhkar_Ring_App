@@ -1,13 +1,16 @@
 cAppTitle = 'تطبيــق الأذكــار'
 cAdhkarSabahText = 'أذكـــار الصــبــــاح'
-cAdhkarMasaaText = 'أذكـــار الـــمــســـاء'
+cAdhkarMasaaText = 'أذكـــار الـمـســـاء'
 cAdhkarSleepText = 'أذكـــار الـنــوم'
+cAdhkarAfterSleep = 'أذكار الاستيقاظ من النوم'
+
 
 nSplashScreen = 0
 nMainScreen = 0
 nAdhkarSabahScreem = 1
 nAdhkarMasaaScreen = 2
 nAdhkarSleepScreen = 3
+ndhkarAfterSleepScreen = 4
 
 load "adhkarView.ring"
 
@@ -46,14 +49,15 @@ class adhkarController from windowsControllerParent
 		oView.oMainStackWidget.setCurrentindex(nAdhkarMasaaScreen)
 	func pGo_Sleep_adhkar
 		oView.oMainStackWidget.setCurrentindex(nAdhkarSleepScreen)
+	func pGo_after_Sleep_adhkar
+		oView.oMainStackWidget.setCurrentindex(ndhkarAfterSleepScreen)
+
 
 	func pNavigateTo nScreenId
 		oView.oMainStackWidget.setCurrentindex(nScreenId)
 
-
 	func pShowVersion_note
 		new version_notes_widget(oView.win)
-		
 
 	func pScreenChanged
 		if this.l_isInitState = 1 
@@ -69,12 +73,18 @@ class adhkarController from windowsControllerParent
 	func UpdatePageTitle nScreenid
 		cText = ''
 		switch nScreenid
-			on nAdhkarSabahScreem
+			on nAdhkarSabahScreem 
+				oView.oAppHeader.l_isLargeText=0
 				cText = substr(cAdhkarSabahText,'ـ','')
 			on nAdhkarMasaaScreen
+				oView.oAppHeader.l_isLargeText=0
 				cText = substr(cAdhkarMasaaText,'ـ','')
 			on nAdhkarSleepScreen
+				oView.oAppHeader.l_isLargeText=0
 				cText = substr(cAdhkarSleepText,'ـ','')
+			on ndhkarAfterSleepScreen
+				oView.oAppHeader.l_isLargeText=1
+				cText = substr(cAdhkarAfterSleep,'ـ','')
 		other
 			cText = substr(cAppTitle,'ـ','')
 		off

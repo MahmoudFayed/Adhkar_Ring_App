@@ -72,6 +72,8 @@ extern "C" {
 #include <QScrollerProperties>
 #include <QEasingCurve>
 #include <QFontDatabase>
+
+
 void forceHideKeyboard() {
     QJSEngine engine;
     QJSValue global = engine.globalObject();

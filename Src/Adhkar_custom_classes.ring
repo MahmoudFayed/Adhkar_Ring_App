@@ -1,10 +1,24 @@
 G_DhkerIndex = 0
 
 class MainButton from qpushbutton
-	cButtonStyle =  ' /* "#Start Of Style" */ 
+	nFontSize = 40
+	
+
+	func init pWidget
+		super.init(pWidget)
+		setFixedSize(300,150)
+		setStylesheet(customStyleSheet())
+		return self
+	func setBigText cText
+		nFontSize = 20
+		setStylesheet(customStyleSheet())
+		setText(cText)
+
+	func customStyleSheet
+		return  ' /* "#Start Of Style" */ 
 GPushButton{
 	padding:40px;
-	font-size:40px;
+	font-size:'+nFontSize+'px;
 	background-color:#111;
 	background: qradialgradient(cx: 0.5, cy: 0.5, radius: 0.7,
 	    stop: 0.02 rgba(31, 76, 92, 1),
@@ -30,9 +44,5 @@ GPushButton:pressed{
 
 /* "End Of Style" */ 
 '
+		
 
-	func init pWidget
-		super.init(pWidget)
-		setFixedSize(300,150)
-		setStylesheet(cButtonStyle)
-		return self

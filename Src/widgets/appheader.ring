@@ -15,7 +15,14 @@ class AppHeader from qWidget
 	AppNameLabel
 	AppIconLabel
 	AppNavigationButton	
-	
+	l_isLargeText = 0	
+	aActionsTexts = ['الــرئــيـســيـــة',
+cAdhkarSabahText,
+cAdhkarMasaaText,
+cAdhkarSleepText,
+cAdhkarAfterSleep
+]
+
 	func init pWidget
 		super.init()
 		setParent(pWidget)
@@ -23,7 +30,7 @@ class AppHeader from qWidget
 		AppNameLabel = new qlabel(pWidget)
 		setStylesheet(cAppHeaderStyle)
 		setFixedHeight(80)
-		ConfigureAppName()
+		//ConfigureAppName()
 
 		AppIconLabel = new qlabel(pWidget)
 		configureAppIcon() 
@@ -53,7 +60,11 @@ class AppHeader from qWidget
 			setTextFormat(2)
 			setOpenexternallinks(1)
 			ConfLbl(this.AppNameLabel)
-			setStylesheet('QLabel{font-size:30px;}')
+			if this.l_isLargeText=0
+				setStylesheet('QLabel{font-size:30px;}')
+			else
+				setStylesheet('QLabel{font-size:20px;}')
+			ok
 			# 'use left because we did not modified layout direction !'
 			setAlignment(Qt_alignLeft | Qt_alignVCenter )
 		}
@@ -71,26 +82,38 @@ class AppHeader from qWidget
 
 	func configureAppNavigator pWidget 
 		pMainMenu  = new QMenu(pWidget){
+			setMaximumwidth(pWidget.maximumwidth()-20)
+			setFixedwidth(pWidget.maximumwidth()-40)
+			if iswebassembly() 
+				animatemenupopup(pObject)
+			ok
+			
 			setStyleSheet(cNavigatorListStyle)
 			GoToHomeAction = new QAction(pWidget){
-				setText('    '+
-'الــرئــيـســيـــة')
+				setText(this.getDahes(this.aActionsTexts[1]))
 				setClickEvent(method('pNavigateTo('+nMainScreen+')'))
 			}
 			GoToAdhkarSabahAction=new QAction(pWidget){
-				setText(' '+cAdhkarSabahText)
+				setText(this.getDahes(this.aActionsTexts[2]))
 				setClickEvent(method('pNavigateTo('+nAdhkarSabahScreem+')'))
 			}
 			GoToAdhkarMasaaAction=new QAction(pWidget){
-				setText(cAdhkarMasaaText)
+				setText(this.getDahes(this.aActionsTexts[3]))
 				setClickEvent(method('pNavigateTo('+nAdhkarMasaaScreen+')'))
 			}
 
 
 			GoToAdhkarSleepAction=new QAction(pWidget){
-				setText('     '+cAdhkarSleepText)
+				setText(this.getDahes(this.aActionsTexts[4]))
 				setClickEvent(method('pNavigateTo('+nAdhkarSleepScreen+')'))
 			}
+
+			GoToAdhkarAfterSleepAction=new QAction(pWidget){
+				setText(this.getDahes(this.aActionsTexts[5]))
+				setClickEvent(method('pNavigateTo('+ndhkarAfterSleepScreen+')'))
+			}
+
+
 
 	
 			addAction(GoToHomeAction)
@@ -99,6 +122,8 @@ class AppHeader from qWidget
 			addAction(GoToAdhkarMasaaAction)
 			addSeparator()
 			addAction(GoToAdhkarSleepAction)
+			addAction(GoToAdhkarAfterSleepAction)
+			addSeparator()
 		}
 
 		AppNavigationButton  {
@@ -108,3 +133,22 @@ class AppHeader from qWidget
 			setPopupMode(2)
 			setMenu(pMainMenu)
 		}
+
+	func setl_isLargeText n
+		this.l_isLargeText = n
+		ConfigureAppName()
+
+	func getBiggestText 
+		nBiggest = 0
+		for x=1 to len(aActionsTexts)
+			if len(aActionsTexts[x]) > nBiggest
+				nBiggest = len(aActionsTexts[x])
+			ok
+		next
+		return nBiggest
+
+	func getDahes cText
+		cText = substr(cText ,'ـ','') 
+		nTextLen = len(cText) + 2
+		nBiggestTextLength = getBiggestText()
+		return copy(' ', (nBiggestTextLength-nTextLen)/2 )+cText

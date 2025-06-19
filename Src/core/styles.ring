@@ -111,7 +111,7 @@ cNavigatorStyle = 'GToolButton{
 	border-radius:10px;
 	text-align:center;
 }
-GToolButton::menu-indicator { image:none; }
+GToolButton::menu-indicator { image:none;}
 
 GToolButton:hover{
 	background-color:rgba(58, 45, 52, 0.96);
@@ -121,12 +121,12 @@ GToolButton:hover{
 GToolButton:focus{}
 GToolButton:pressed{}
 '
-cNavigatorListStyle=' QMenu {
-        font-size: 34px; 
+cNavigatorListStyle=` QMenu {
+        font-size: 30px; 
         border: 1px solid #ccc;
 		border-radius:20px;
-        padding: 5px;
-    }
+        padding: 3px;
+   }
 
     QMenu::item {
         background-color: transparent;
@@ -139,4 +139,4 @@ cNavigatorListStyle=' QMenu {
         border-radius: 20px;
         background-color: #1f4b5b;
     }
-'
+`
