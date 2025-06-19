@@ -25,6 +25,7 @@ Load "guilib.ring"
 	load 'screens/adhkar_masaa.ring'
 	load 'screens/adhkar_sleep.ring'
 	load 'screens/adhkar_after_sleep.ring'
+	load 'screens/adhkar_great.ring'
 
 oMainAppFont = new qfont("",0,0,0) 
 	# 'IOS 15 Heavy' is Main Font Found in fonts/appfont.ttf
@@ -83,6 +84,9 @@ class adhkarView from WindowsViewParent
 			setMaximumWidth(nAppWidth)
 		}
 
+		oAdhkar_great_widget = new adhkar_great(win){
+			setMaximumWidth(nAppWidth)
+		}
 		
 
 	oMainStackWidget = new QStackedWidget(win){
@@ -93,6 +97,7 @@ class adhkarView from WindowsViewParent
 		addWidget(oAdhkar_massa_widget)
 		addwidget(oAdhkar_sleep_widget)
 		addWidget(oAdhkar_after_sleep_widget)
+		addWidget(oAdhkar_great_widget)
 
 		setMaximumWidth(nAppWidth)
 		setMaximumHeight(nAppHeight-10)

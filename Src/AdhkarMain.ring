@@ -3,7 +3,7 @@ cAdhkarSabahText = 'أذكـــار الصــبــــاح'
 cAdhkarMasaaText = 'أذكـــار الـمـســـاء'
 cAdhkarSleepText = 'أذكـــار الـنــوم'
 cAdhkarAfterSleep = 'أذكار الاستيقاظ من النوم'
-
+cAdhkarGreat = 'أذكــــار عظيــمـــة'
 
 nSplashScreen = 0
 nMainScreen = 0
@@ -11,6 +11,7 @@ nAdhkarSabahScreem = 1
 nAdhkarMasaaScreen = 2
 nAdhkarSleepScreen = 3
 ndhkarAfterSleepScreen = 4
+ndhkargreatScreen = 5
 
 load "adhkarView.ring"
 
@@ -51,6 +52,9 @@ class adhkarController from windowsControllerParent
 		oView.oMainStackWidget.setCurrentindex(nAdhkarSleepScreen)
 	func pGo_after_Sleep_adhkar
 		oView.oMainStackWidget.setCurrentindex(ndhkarAfterSleepScreen)
+	func pGo_great_adhkar
+		oView.oMainStackWidget.setCurrentindex(ndhkargreatScreen)
+
 
 
 	func pNavigateTo nScreenId
@@ -85,6 +89,10 @@ class adhkarController from windowsControllerParent
 			on ndhkarAfterSleepScreen
 				oView.oAppHeader.l_isLargeText=1
 				cText = substr(cAdhkarAfterSleep,'ـ','')
+			on ndhkargreatScreen
+				oView.oAppHeader.l_isLargeText=0
+				cText = substr(cAdhkarGreat,'ـ','')
+
 		other
 			cText = substr(cAppTitle,'ـ','')
 		off

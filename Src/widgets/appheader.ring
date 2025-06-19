@@ -20,7 +20,8 @@ class AppHeader from qWidget
 cAdhkarSabahText,
 cAdhkarMasaaText,
 cAdhkarSleepText,
-cAdhkarAfterSleep
+cAdhkarAfterSleep,
+cAdhkarGreat
 ]
 
 	func init pWidget
@@ -113,6 +114,11 @@ cAdhkarAfterSleep
 				setClickEvent(method('pNavigateTo('+ndhkarAfterSleepScreen+')'))
 			}
 
+			GoToAdhkarGreatAction=new QAction(pWidget){
+				setText(this.getDahes(this.aActionsTexts[6]))
+				setClickEvent(method('pNavigateTo('+ndhkargreatScreen+')'))
+			}
+
 
 
 	
@@ -124,6 +130,7 @@ cAdhkarAfterSleep
 			addAction(GoToAdhkarSleepAction)
 			addAction(GoToAdhkarAfterSleepAction)
 			addSeparator()
+			addAction(GoToAdhkarGreatAction)
 		}
 
 		AppNavigationButton  {

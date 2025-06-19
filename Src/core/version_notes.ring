@@ -5,6 +5,11 @@ cVersion_notes_btnText += nl
 cVersion_notes_btnText += 'إضغط لعرض المزيد'
 cVersion_note_detailes = ''
 
+cVersion_note_detailes += get_Version_note('1.2.2','19/06/2025',
+[
+'تم اضافة اذكار بعد الاستيقاظ من النوم',
+'تم اضافة اذكار عظيمة (مجموعة من التسبيحات الواردة من السنة النبوية)'
+])
 cVersion_note_detailes += get_Version_note('1.2.1','16/06/2025',
 [
 'إضافة اذكار النوم.',
