@@ -54,7 +54,11 @@ aPackageInfo = [
 		"Src/widgets/adhkar_panel.ring",
 		"Src/widgets/adhkar_widget.ring",
 		"Src/widgets/appheader.ring",
-		"Src/widgets/version_notes.ring"
+		"Src/widgets/version_notes.ring",
+		"Src/images/logo.png",
+		"Src/images/reset.png",
+		"Src/images/whatsapp.png",
+		"Src/fonts/appfont.ttf"
 	],
 	:ringfolderfiles = 	[
 		
