@@ -1,0 +1,75 @@
+aPackageInfo = [
+	:name = "The Ring Adhkar Application",
+	:description = "Adhkar Application using the Ring programming language",
+	:folder = "Adhkar_Ring_App",
+	:developer = "Mohannad Alayash",
+	:email = "mohannadazazalayash@gmail.com",
+	:license = "MIT License",
+	:version = "1.0.0",
+	:ringversion = "1.22",
+	:versions = 	[
+		[
+			:version = "1.0.0",
+			:branch = "main"
+		]
+	],
+	:libs = 	[
+		[
+			:name = "guilib",
+			:version = "1.0.21",
+			:providerusername = "ringpackages"
+		]
+	],
+	:files = <T_aFilesList>,
+	:ringfolderfiles = 	[
+		
+	],
+	:windowsfiles = 	[
+
+	],
+	:linuxfiles = 	[
+
+	],
+	:ubuntufiles = 	[
+
+	],
+	:fedorafiles = 	[
+
+	],
+	:macosfiles = 	[
+
+	],
+	:windowsringfolderfiles = 	[
+
+	],
+	:linuxringfolderfiles = 	[
+
+	],
+	:ubunturingfolderfiles = 	[
+
+	],
+	:fedoraringfolderfiles = 	[
+
+	],
+	:macosringfolderfiles = 	[
+
+	],
+	:run = "ring main.ring",
+	:windowsrun = "",
+	:linuxrun = "",
+	:macosrun = "",
+	:ubunturun = "",
+	:fedorarun = "",
+	:setup = "",
+	:windowssetup = "",
+	:linuxsetup = "",
+	:macossetup = "",
+	:ubuntusetup = "",
+	:fedorasetup = "",
+	:remove = "",
+	:windowsremove = "",
+	:linuxremove = "",
+	:macosremove = "",
+	:ubunturemove = "",
+	:fedoraremove = ""
+]
