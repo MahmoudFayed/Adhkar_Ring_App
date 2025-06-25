@@ -6,7 +6,11 @@ background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
     stop: 1.0 rgba(36, 35, 19, 1)
 );
 border-radius:24px;	
-}`
+} `
+
+if ismobile()
+	cWindowStyle+= nl+'#Win{ margin-top:-3px;margin-left:-5px; }'
+ok
 
 cVersion_notes_btn_style = `GPushButton{
 	padding:20px;

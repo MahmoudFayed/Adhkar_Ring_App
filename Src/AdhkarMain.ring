@@ -22,7 +22,7 @@ if IsMainSourceFile() {
 		StyleFusionblack()
 		openWindow(:adhkarController)
 		
-		if iswebassembly()
+		if iswebassembly() 
 			hidekeyboard(pObject) # 'ring function defiened in cpp to hide keyboard in mobile'
 		else
 			exec()
@@ -42,7 +42,14 @@ class adhkarController from windowsControllerParent
 
 	l_isInitState = 1
 	oView = new adhkarView
-	
+
+	func pBuittonCliked
+		nKey = oView.oFilter.getkeycode()
+		switch nKey
+			on 16777313 //'Back Button'
+				pNavigateTo(nMainScreen)
+				oView.mainwin.show()
+		off
 
 	func pGo_Sabah_adhkar
 		oView.oMainStackWidget.setCurrentindex(nAdhkarSabahScreem)

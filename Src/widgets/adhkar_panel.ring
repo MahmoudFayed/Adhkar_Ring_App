@@ -6,8 +6,8 @@ class Adkhar_Panel from qScrollarea
 		super.init(pWidget)
 		setLayout(oLayout)
 		setStylesheet(cScrollWidgetStyle)
-		if iswebassembly() # 'cpp function to handel scroll using phones'
-			//MakeWidgetScrollAble_Bytouch(pObject)
+		if ismobile() # 'cpp function to handel scroll using phones'
+			MakeWidgetScrollAble_Bytouch(pObject)
 		ok
 		CreateAdhkarWidgets(pWidget,aAdhkarList)
 		# 'Setting Alignment for qscrollArea'

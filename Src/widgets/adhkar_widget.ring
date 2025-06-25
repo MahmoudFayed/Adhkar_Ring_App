@@ -16,6 +16,7 @@ class AdkharWidget from QWidget
 	func init oScroll,pWidget,cDhkerText,nTimesToSay
 		this.cDhkerText = cDhkerText
 		this.nTimesToSay = nTimesToSay
+		nSpacesRightLeft = 8
 		super.init()
 		oScrollParent = ref(oScroll)
 		setStylesheet('QWidget{background-color:#222;border:2px solid #1F4C5C;border-radius:20; }')
@@ -43,9 +44,11 @@ class AdkharWidget from QWidget
 			oPixMap.delete()
 		}
 		oTopLayout = new qhboxlayout() {
+			addSpacing(nSpacesRightLeft)
 			addWidget(this.oShareToWhatsAppBtn)
 				addStretch(40)
 			addWidget(this.oDhkerIndexLable)
+			addSpacing(nSpacesRightLeft)
 
 			setAlignment(this.oDhkerIndexLable,qt_alignRight | qt_alignVCenter  )
 			setAlignment(this.oShareToWhatsAppBtn,qt_alignLeft | qt_alignVCenter  )
@@ -79,6 +82,7 @@ class AdkharWidget from QWidget
 			setClickEventForDhkerButton(self)
 			setStylesheet(cDhkerTimesButtonStyle)
 			setFixedsize(100,100) 
+			setFont(oMainAppFont)
 		}
 /*
 	in ReSet Button We have another method as we can use the first method :D..
@@ -102,10 +106,11 @@ class AdkharWidget from QWidget
 		}
 
 		oDhkerLayout= new qHboxlayout() {
-
+			addSpacing(nSpacesRightLeft)
 			addWidget(this.oDhkerReSetButton)
 			addWidget(this.oDhkerTimesButton)
 			addWidget(this.oDhkerLabelTimesToSay)
+			addSpacing(nSpacesRightLeft)
 			setAlignment(this.oDhkerReSetButton,qt_alignLeft | qt_alignVCenter )
 			setAlignment(this.oDhkerTimesButton,qt_alignHCenter | qt_alignVCenter )
 			setAlignment(this.oDhkerLabelTimesToSay,qt_alignRight | qt_alignVCenter )

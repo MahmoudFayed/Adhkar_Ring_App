@@ -18,7 +18,7 @@ class MainButtonsList from qScrollArea
 		
 		verticalscrollbar().hide()
 
-		if iswebassembly() # 'cpp function to handel scroll using phones'
+		if iswebassembly() or ismobile() # 'cpp function to handel scroll using phones'
 			MakeWidgetScrollAble_Bytouch(pObject)
 		ok
 
@@ -96,6 +96,9 @@ class MainScreen From QWidget
 			setText(cVersion_notes_btnText)
 			setClickEvent(method(:pShowVersion_note))
 			setStyleSheet(cVersion_notes_btn_style)
+			if ismobile()
+				hide()
+			ok
 		}
 
 		oScrollArea = new MainButtonsList(pWidget){}

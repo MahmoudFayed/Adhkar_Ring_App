@@ -41,7 +41,13 @@ class adhkarView from WindowsViewParent
 	nAppWidth = 360
 	nAppHeight = 700
 	cAppName = 'تطبيق الاذكار للغة البرمجة رينج'
-	
+	l_isMobile = ismobile()
+
+	if this.l_isMobile
+		oDesktop = new qdesktopwidget() 
+		nAppWidth = oDesktop.width()-25
+		nAppHeight = oDesktop.height()
+	ok
 	mainwin = new qWidget(){
 		move(300,100)
 		resize(nAppWidth,nAppHeight)
@@ -49,11 +55,17 @@ class adhkarView from WindowsViewParent
 
 		setstylesheet(cWindowStyle) 
 	}
+
+    oFilter = new qallevents(mainwin)
+    oFilter.setKeyPressEvent(method(:pBuittonCliked))
+    mainwin.installeventfilter(oFilter)
+
+
 	win = new qWidget() { 
 		
 		setfixedsize(nAppWidth+10,nAppHeight)
 		setMaximumHeight(nAppHeight)
-
+		setObjectname('Win')
 		setstylesheet(cWindowStyle) 
 	}
 	# 'App Header'	
@@ -115,9 +127,14 @@ class adhkarView from WindowsViewParent
 	win.setLayout(pMainLayout)
 	mainwin{
 		setLayout(		
-			new qvboxlayout(){
+			new qhboxlayout(){
 				addwidget(this.win)
-				setAlignment(this.win, qt_AlignHCenter | qt_AlignVCenter )
+				if ismobile()
+					addSpacing(10)
+					setAlignment(this.win, qt_Alignleft | qt_AlignVCenter )
+				else
+					setAlignment(this.win, qt_AlignHCenter | qt_AlignVCenter )
+				ok
 			}
 		)
 		show()

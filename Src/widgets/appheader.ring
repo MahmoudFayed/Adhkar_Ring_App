@@ -30,7 +30,7 @@ cAdhkarGreat
 		hide()
 		AppNameLabel = new qlabel(pWidget)
 		setStylesheet(cAppHeaderStyle)
-		setFixedHeight(80)
+		setFixedHeight(70)
 		//ConfigureAppName()
 
 		AppIconLabel = new qlabel(pWidget)
@@ -88,7 +88,9 @@ cAdhkarGreat
 			if iswebassembly() 
 				animatemenupopup(pObject)
 			ok
-			
+			if ismobile()
+				center_qmenu(pObject)
+			ok
 			setStyleSheet(cNavigatorListStyle)
 			GoToHomeAction = new QAction(pWidget){
 				setText(this.getDahes(this.aActionsTexts[1]))
