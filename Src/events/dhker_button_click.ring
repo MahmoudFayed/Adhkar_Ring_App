@@ -59,6 +59,10 @@ func DoDhker pPointer
 			
 
 			yDiretion = oBtn.mapTo(oScroll.widget(), new QPoint(){ setX(0) setY(0) }).y()+oBtn.height()+40
+
+			if ismobile()
+				yDiretion -= 12
+			ok
 			oScroll.verticalScrollBar().setValue(yDiretion)
 
 		ok
