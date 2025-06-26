@@ -1,6 +1,6 @@
 # libs
 Load "stdlibcore.ring"
-Load "guilib.ring"
+Load "lightguilib.ring"
 # static
 	load 'Adhkar_List.ring'
 	load 'core/styles.ring'
