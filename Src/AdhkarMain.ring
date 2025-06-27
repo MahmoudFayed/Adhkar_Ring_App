@@ -16,9 +16,13 @@ ndhkargreatScreen = 5
 load "adhkarView.ring"
 
 import System.GUI
+oApp = new App 
 
 if IsMainSourceFile() {
-	oApp = new App {
+	start_app()
+}
+func start_app
+	oApp{
 		StyleFusionblack()
 		openWindow(:adhkarController)
 		
@@ -28,7 +32,6 @@ if IsMainSourceFile() {
 			exec()
 		ok
 	}
-}
 
 class adhkarController from windowsControllerParent
 ? ' ------------------------------------------
