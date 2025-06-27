@@ -57,7 +57,7 @@ class adhkarView from WindowsViewParent
 	}
 
     oFilter = new qallevents(mainwin)
-    oFilter.setKeyPressEvent(method(:pBuittonCliked))
+    oFilter.setKeyPressEvent(method(:pButtonClicked))
     mainwin.installeventfilter(oFilter)
 
 

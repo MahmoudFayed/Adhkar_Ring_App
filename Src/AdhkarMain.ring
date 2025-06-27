@@ -43,7 +43,7 @@ class adhkarController from windowsControllerParent
 	l_isInitState = 1
 	oView = new adhkarView
 
-	func pBuittonCliked
+	func pButtonClicked
 		nKey = oView.oFilter.getkeycode()
 		switch nKey
 			on 16777313 //'Back Button'
