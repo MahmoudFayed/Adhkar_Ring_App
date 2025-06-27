@@ -5,11 +5,12 @@
 /*
 	Vars in Templte : 
 	1- <T_aFilesList>
-
+	2- <T_cPackageVersion>
 */
 load 'stdlibcore.ring'
 
 cTemplate = read('package.ring.template')
+cContent = cTemplate
 
 aFilter = [] // 'Var For Filtering ...'
 
@@ -36,10 +37,19 @@ aPackageFiles + 'README.md'
 		aFiles = listallfiles('Src','*.ttf')
 		addNow(aFiles)
 
-	cTemplate = substr( cTemplate ,'<T_aFilesList>' ,listfiles2codewithformat(aPackageFiles))
+
+	# 'Setting the content'
+		setContent('<T_aFilesList>',listfiles2codewithformat(aPackageFiles))
+		setContent('<T_cPackageVersion>','1.1.0')
 
 	# 'Update package.ring File'
-		write('package.ring',cTemplate)	
+		writeComment()
+
+
+func setContent cVar,cCont
+	cContent = substr(cContent,cVar,cCont)
+func writeComment
+	write('package.ring',cContent)	
 
 func listfiles2codewithformat alist 
 
