@@ -90,7 +90,7 @@ class AdkharWidget from QWidget
 		So it take the pObject of Reset Button,
 		and the number of times to be reset,
 		and the button of times to say to change the text of it :D...
-			Now See : core/functions.ring
+			Now See : events/dhker_reset_button.ring
 */
 		oDhkerReSetButton = new qpushbutton(pWidget) {
 			setClickEventForReSetDhkerButton(pObject,nTimesToSay ,this.oDhkerTimesButton.pObject )
