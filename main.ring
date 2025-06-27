@@ -1,5 +1,6 @@
 # The Main File
+load 'Src/AdhkarMain.ring'
 
 func main
 	chdir('Src')
-	ring_state_main('AdhkarMain.ring')
+	start_app()
