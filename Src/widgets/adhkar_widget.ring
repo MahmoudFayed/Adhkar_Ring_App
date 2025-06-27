@@ -73,7 +73,7 @@ class AdkharWidget from QWidget
 		}
 /*
 	Using Thie Method By adding attribute of parent to be accessed later then
-	passing the object of button to function then Handels Pointers as in file : core/functions.ring 
+	passing the object of button to function then Handels the object to be added to global list (G_aDhkerButtonsList) as in file : events/dhker_button_click.ring 
 */
 		oDhkerTimesButton = new qpushbutton(pWidget) {
 			setText(''+nTimesToSay)
