@@ -16,7 +16,6 @@ func DoDhker nIndex
 	oDhkerClassObject = G_aDhkerButtonsList[nIndex]
 
 	oBtn = oDhkerClassObject.odhkertimesbutton
-	oLbl = oDhkerClassObject
 	nDhkerTimes = oDhkerClassObject.ntimestosay
 	nTimes = 0+oBtn.text()
 
