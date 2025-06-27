@@ -11,7 +11,7 @@ load 'stdlibcore.ring'
 
 cTemplate = read('package.ring.template')
 
-cFilter = '' // 'Var For Filtering ...'
+aFilter = [] // 'Var For Filtering ...'
 aPackageFiles = [] // 'List Will Contains All Files For Package'
 aPackageFiles + 'main.ring'
 aPackageFiles + 'README.md'
@@ -21,7 +21,8 @@ aPackageFiles + 'README.md'
 	addNow(aFiles)
 
 # 'Adding The Src files'
-	cFilter = 'Src/target'
+	aFilter + 'Src/target'
+	aFilter + 'Src/build_ws.ring'
 	aFiles = listallfiles('Src','*.ring')
 	addNow(aFiles)
 
@@ -32,7 +33,7 @@ aPackageFiles + 'README.md'
 		aFiles = listallfiles('Src','*.ttf')
 		addNow(aFiles)
 	# 'Restore filter'
-		cFilter = ''
+		aFilter = []
 
 
 	cTemplate = substr( cTemplate ,'<T_aFilesList>' ,listfiles2codewithformat(aPackageFiles))
@@ -50,10 +51,17 @@ func listfiles2codewithformat alist
 	return cStr
 func addNow aList
 	for item in alist
-		if cFilter = "" or (cFilter != '' and ! substr(item , cFilter))
-			aPackageFiles + item
+		if len(aFilter) > 0
+			for cfilter in aFilter
+				if ! substr(item , cFilter)
+					aPackageFiles + item
+				else
+					? 'Skipping : '+ item
+				ok
+			next
 		else
-			? 'Skipping : '+ item
+			aPackageFiles + item
 		ok
+		
 	next
 
