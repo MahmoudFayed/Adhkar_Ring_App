@@ -12,6 +12,8 @@ load 'stdlibcore.ring'
 cTemplate = read('package.ring.template')
 
 aFilter = [] // 'Var For Filtering ...'
+
+
 aPackageFiles = [] // 'List Will Contains All Files For Package'
 aPackageFiles + 'main.ring'
 aPackageFiles + 'README.md'
@@ -21,9 +23,10 @@ aPackageFiles + 'README.md'
 	addNow(aFiles)
 
 # 'Adding The Src files'
+	aFiles = listallfiles('Src','*.ring')
 	aFilter + 'Src/target'
 	aFilter + 'Src/build_ws.ring'
-	aFiles = listallfiles('Src','*.ring')
+
 	addNow(aFiles)
 
 	# 'Adding images'
@@ -32,9 +35,6 @@ aPackageFiles + 'README.md'
 	# 'Adding fonts'
 		aFiles = listallfiles('Src','*.ttf')
 		addNow(aFiles)
-	# 'Restore filter'
-		aFilter = []
-
 
 	cTemplate = substr( cTemplate ,'<T_aFilesList>' ,listfiles2codewithformat(aPackageFiles))
 
@@ -42,6 +42,7 @@ aPackageFiles + 'README.md'
 		write('package.ring',cTemplate)	
 
 func listfiles2codewithformat alist 
+
 	cStr = '['+nl
 	for item in alist
 		cStr+= copy(tab,2)+'"'+item+'",'+nl
@@ -50,18 +51,19 @@ func listfiles2codewithformat alist
 	cStr += copy(tab,1)+']'
 	return cStr
 func addNow aList
-	for item in alist
-		if len(aFilter) > 0
-			for cfilter in aFilter
-				if ! substr(item , cFilter)
-					aPackageFiles + item
-				else
-					? 'Skipping : '+ item
-				ok
-			next
-		else
+	? copy('-',40)
+	? 'Adding...'
+	map(alist , func item{
+		if isFilter_accepted(item)
 			aPackageFiles + item
+		else
+			? 'Skipping : '+item
 		ok
-		
+	})
+func isFilter_accepted item
+	for cfilter in aFilter
+		if substr(item ,cfilter)
+			return 0
+		ok
 	next
-
+	return 1
