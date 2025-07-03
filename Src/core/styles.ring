@@ -32,6 +32,7 @@ QScrollArea QScrollBar {
 QScrollArea QScrollBar::handle:vertical {
     background-color: #111;
     min-height: 20px;
+	border:1px solid white;
     border-radius: 8px;
     width: 40px; 
 }
@@ -45,7 +46,7 @@ QScrollArea QScrollBar::handle:pressed {
 }
 
 QScrollArea QScrollBar::add-line, QScrollArea QScrollBar::sub-line {
-    background-color: #2e2e2e;
+    background-color: transparent;
     width: 40px;
     height: 12px;
 }
